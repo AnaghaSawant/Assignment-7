@@ -1,23 +1,25 @@
 <html>
-<head>
-	<title>Example - example-ngRepeat-production</title>
-	<script src="https://code.angularjs.org/1.7.8/angular.min.js"></script>
-	<script src="https://code.angularjs.org/1.7.8/angular-animate.js"></script>
-	<script type="text/javascript" src="withAngularScript.js"></script>
-</head>
-	<body ng-app="ngRepeat">
-		<div ng-controller="repeatController">
-			<input type="button" value="add" ng-click="addText()"/>
-			<div class="container">
+	<head>
+		<title>Example</title>
+		<script src="https://code.angularjs.org/1.7.8/angular.min.js"></script>
+		<script src="https://code.angularjs.org/1.7.8/angular-animate.js"></script>
+		<script type="text/javascript" src="withAngularScript.js"></script>
+	</head>
+	<body>
+		<div ng-app="MyApp" ng-controller="MyController">
+	        <input type="button" value="add" ng-click="ShowDiv()" />
+	        <div ng-show = "isVisible">
+	          <input type=text ng-model="textValue" >
+	          <input type=color ng-model="clr">
+	          <input type=submit ng-model="submit" ng-click="SubmitValue()">
+	        </div>
+
+	        <div class="container">
 				<div class="array" ng-repeat="friend in friends track by $index">
-					<input type="button" ng-click="decCount($index)" value="-">
-					<input type="button" value="{{friend.value}}" ng-style="{'background-color': '{{friend.colour}}'}">
-					<input type="button" ng-click="incCount($index)" value="+">
-				</div>
-				<div class="array" ng-if="results.length === 0">
-					<strong>No results found...</strong>
+					<input type="button" ng-click="DecCount($index)" value="-" ng-style="{'background-color': friend.color}">
+					<input type="button" value="{{friend.value}} {{friend.txt}}" ng-style="{'background-color': friend.color}">
+					<input type="button" ng-click="IncCount($index)" value="+" ng-style="{'background-color': friend.color}">
 				</div>
 			</div>
-		</div>
-	</body>
+	 </body>
 </html>
