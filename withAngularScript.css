@@ -1,0 +1,16 @@
+.selectbox {
+  padding: 10px;
+  border: 2px solid #fff;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.selectbox {
+  border: 1px solid #dddddd;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.selectbox.active {
+  border: 1px solid #333;
+}
